@@ -1,1 +1,8 @@
-.env\n.venv/\n__pycache__/\n*.py[cod]\n.DS_Store\n.streamlit/secrets.toml\n
+cat > .gitignore <<'EOF'
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.streamlit/secrets.toml
+EOF
