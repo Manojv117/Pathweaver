@@ -1,0 +1,47 @@
+name: pathweaver-career-map
+version: "1"
+
+cases:
+  - id: career-map-structure
+    name: Validate career map structure
+
+    input:
+      target_role: Data Engineer
+
+    required_output_fields:
+      - profile_summary
+      - skills
+      - role_fit_summary
+      - gaps
+      - next_action
+
+    output_json_schema:
+      type: object
+      required:
+        - profile_summary
+        - skills
+        - role_fit_summary
+        - gaps
+        - next_action
+
+      properties:
+        profile_summary:
+          type: string
+
+        skills:
+          type: array
+
+        role_fit_summary:
+          type: string
+
+        gaps:
+          type: array
+
+        next_action:
+          type: object
+          required:
+            - title
+            - why
+            - steps
+            - success_evidence
+            - estimated_hours

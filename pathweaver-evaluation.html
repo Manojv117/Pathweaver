@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AgenticLens Evaluation — pathweaver-career-map</title>
+  <style>
+    :root { color-scheme: dark; --bg:#07111f; --panel:#101d2e; --text:#eaf2ff;
+      --muted:#91a4bd; --line:#24364e; --green:#3ddc97; --red:#ff6b7a; --blue:#62a8ff; }
+    * { box-sizing:border-box } body { margin:0; background:linear-gradient(135deg,#07111f,#0c1730);
+      color:var(--text); font:15px/1.5 Inter,ui-sans-serif,system-ui,sans-serif; }
+    main { max-width:1100px; margin:auto; padding:48px 24px 72px; }
+    header { display:flex; justify-content:space-between; gap:24px; align-items:end; }
+    h1 { font-size:36px; margin:6px 0 } h3 { display:inline; margin-left:12px }
+    .eyebrow,.case-id,.metrics { color:var(--muted) } .release { color:var(--blue); font-weight:800 }
+    .cards { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:30px 0; }
+    .card,.case { background:rgba(16,29,46,.92); border:1px solid var(--line);
+      border-radius:14px; padding:20px; box-shadow:0 12px 36px #0004; }
+    .card span { color:var(--muted); display:block } .card strong { font-size:27px }
+    .case { margin:14px 0 } .case-heading { display:flex; justify-content:space-between; gap:12px }
+    .badge { border-radius:99px; padding:5px 9px; font-size:11px; font-weight:900 }
+    .pass-bg { background:#153f34; color:var(--green) } .fail-bg { background:#4b202b; color:var(--red) }
+    .pass { color:var(--green) } .fail { color:var(--red) } .skip { color:var(--muted) }
+    .evaluator { color:var(--muted); font-size:12px } .card small { color:var(--muted) }
+    pre { white-space:pre-wrap; background:#07111f; border-radius:9px; padding:13px; color:#cfe0f6 }
+    li { margin:7px 0 } footer { color:var(--muted); margin-top:30px }
+    table { border-collapse:collapse; width:100% } th,td { text-align:left; padding:6px 10px; border-bottom:1px solid var(--line) }
+    @media(max-width:760px) { .cards { grid-template-columns:1fr 1fr } header { display:block } }
+  </style>
+</head>
+<body><main>
+  <header><div><div class="eyebrow">AGENTICLENS · EVALUATION REPORT</div>
+    <h1>pathweaver-career-map</h1><div>1</div></div>
+    <div class="release" title="Case outcomes only; run agenticlens gate for a release decision">CASE RESULT · ALL CASES PASSED</div></header>
+  <section class="cards">
+    <div class="card"><span>Pass rate</span><strong>100.0%</strong></div>
+    <div class="card"><span>Average score</span><strong>1.000</strong></div>
+    <div class="card"><span>Average latency</span><strong>0.0 ms</strong></div>
+    <div class="card"><span>Total cost</span><strong>Unavailable</strong><small>0/1 priced</small></div>
+  </section>
+  
+  <h2>Test cases</h2>
+            <article class="case">
+              <div class="case-heading">
+                <div><span class="badge pass-bg">
+                  PASS
+                </span><h3>Validate career map structure</h3></div>
+                <div class="metrics">0.0 ms · Unavailable</div>
+              </div>
+              <p class="case-id">career-map-structure · trace pathweaver-sample-001</p>
+              <pre>{
+  &quot;profile_summary&quot;: &quot;The learner has foundational Python and SQL skills.&quot;,
+  &quot;skills&quot;: [
+    {
+      &quot;name&quot;: &quot;Python&quot;,
+      &quot;level&quot;: &quot;Developing&quot;,
+      &quot;confidence&quot;: 0.8,
+      &quot;evidence&quot;: &quot;The learner reports knowing Python basics.&quot;,
+      &quot;evidence_type&quot;: &quot;Self-reported&quot;
+    },
+    {
+      &quot;name&quot;: &quot;PostgreSQL&quot;,
+      &quot;level&quot;: &quot;Developing&quot;,
+      &quot;confidence&quot;: 0.9,
+      &quot;evidence&quot;: &quot;The learner built a project storing API data in PostgreSQL.&quot;,
+      &quot;evidence_type&quot;: &quot;Project&quot;
+    }
+  ],
+  &quot;role_fit_summary&quot;: &quot;The learner has a foundation for data engineering.&quot;,
+  &quot;gaps&quot;: [
+    {
+      &quot;skill&quot;: &quot;Data pipeline orchestration&quot;,
+      &quot;priority&quot;: &quot;High&quot;,
+      &quot;reason&quot;: &quot;Orchestration helps manage repeatable data workflows.&quot;,
+      &quot;prerequisite&quot;: &quot;Build a Python pipeline that loads API data into PostgreSQL.&quot;
+    }
+  ],
+  &quot;next_action&quot;: {
+    &quot;title&quot;: &quot;Build an API-to-PostgreSQL pipeline&quot;,
+    &quot;why&quot;: &quot;This extends the learner&#x27;s existing API and SQL experience.&quot;,
+    &quot;steps&quot;: [
+      &quot;Extract data from a public API.&quot;,
+      &quot;Validate and transform the data.&quot;,
+      &quot;Load the data into PostgreSQL.&quot;
+    ],
+    &quot;success_evidence&quot;: &quot;Verify that the pipeline loads records using SQL.&quot;,
+    &quot;estimated_hours&quot;: 4
+  }
+}
+</pre>
+              <ul><li class="pass"><strong>json_schema</strong> <span class="evaluator">agentic_evals.builtin@0.9.0</span>: Output matches the configured JSON Schema Draft 2020-12.</li><li class="pass"><strong>required_field:profile_summary</strong> <span class="evaluator">agentic_evals.builtin@0.9.0</span>: Output contains required field &#x27;profile_summary&#x27;.</li><li class="pass"><strong>required_field:skills</strong> <span class="evaluator">agentic_evals.builtin@0.9.0</span>: Output contains required field &#x27;skills&#x27;.</li><li class="pass"><strong>required_field:role_fit_summary</strong> <span class="evaluator">agentic_evals.builtin@0.9.0</span>: Output contains required field &#x27;role_fit_summary&#x27;.</li><li class="pass"><strong>required_field:gaps</strong> <span class="evaluator">agentic_evals.builtin@0.9.0</span>: Output contains required field &#x27;gaps&#x27;.</li><li class="pass"><strong>required_field:next_action</strong> <span class="evaluator">agentic_evals.builtin@0.9.0</span>: Output contains required field &#x27;next_action&#x27;.</li></ul>
+            </article>
+            
+  <footer>Generated by AgenticLens · 2026-10-23T10:00:27.976514+00:00</footer>
+</main></body></html>

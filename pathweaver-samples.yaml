@@ -1,0 +1,50 @@
+samples:
+  - case_id: career-map-structure
+    output: |
+      {
+        "profile_summary": "The learner has foundational Python and SQL skills.",
+        "skills": [
+          {
+            "name": "Python",
+            "level": "Developing",
+            "confidence": 0.8,
+            "evidence": "The learner reports knowing Python basics.",
+            "evidence_type": "Self-reported"
+          },
+          {
+            "name": "PostgreSQL",
+            "level": "Developing",
+            "confidence": 0.9,
+            "evidence": "The learner built a project storing API data in PostgreSQL.",
+            "evidence_type": "Project"
+          }
+        ],
+        "role_fit_summary": "The learner has a foundation for data engineering.",
+        "gaps": [
+          {
+            "skill": "Data pipeline orchestration",
+            "priority": "High",
+            "reason": "Orchestration helps manage repeatable data workflows.",
+            "prerequisite": "Build a Python pipeline that loads API data into PostgreSQL."
+          }
+        ],
+        "next_action": {
+          "title": "Build an API-to-PostgreSQL pipeline",
+          "why": "This extends the learner's existing API and SQL experience.",
+          "steps": [
+            "Extract data from a public API.",
+            "Validate and transform the data.",
+            "Load the data into PostgreSQL."
+          ],
+          "success_evidence": "Verify that the pipeline loads records using SQL.",
+          "estimated_hours": 4
+        }
+      }
+    trace:
+      trace_id: pathweaver-sample-001
+      spans: []
+      total_latency_ms: 0
+      estimated_cost_usd: null
+      cost_source: null
+      metadata:
+        source: synthetic_test_fixture

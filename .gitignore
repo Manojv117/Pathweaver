@@ -6,3 +6,7 @@ __pycache__/
 .DS_Store
 .streamlit/secrets.toml
 EOF
+
+# Local backups
+app_backup.py
+app_before_redesign.py

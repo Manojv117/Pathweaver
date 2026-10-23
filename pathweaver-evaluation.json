@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0",
+  "suite_name": "pathweaver-career-map",
+  "suite_version": "1",
+  "created_at": "2026-10-23T10:00:27.976514Z",
+  "summary": {
+    "total_cases": 1,
+    "passed_cases": 1,
+    "failed_cases": 0,
+    "pass_rate": 1.0,
+    "average_score": 1.0,
+    "total_cost_usd": null,
+    "priced_cases": 0,
+    "cost_sources": {},
+    "average_latency_ms": 0.0,
+    "metrics": {
+      "json_schema": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "skipped": 0,
+        "pass_rate": 1.0,
+        "average_score": 1.0
+      },
+      "required_field": {
+        "total": 5,
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0,
+        "pass_rate": 1.0,
+        "average_score": 1.0
+      }
+    },
+    "tags": {},
+    "judge": null,
+    "live": null
+  },
+  "cases": [
+    {
+      "case_id": "career-map-structure",
+      "case_name": "Validate career map structure",
+      "passed": true,
+      "scores": [
+        {
+          "name": "json_schema",
+          "metric": "json_schema",
+          "value": 1.0,
+          "passed": true,
+          "required": true,
+          "skipped": false,
+          "explanation": "Output matches the configured JSON Schema Draft 2020-12.",
+          "evaluator_type": "deterministic",
+          "evaluator": "agentic_evals.builtin",
+          "evaluator_version": "0.9.0",
+          "metadata": {}
+        },
+        {
+          "name": "required_field:profile_summary",
+          "metric": "required_field",
+          "value": 1.0,
+          "passed": true,
+          "required": true,
+          "skipped": false,
+          "explanation": "Output contains required field 'profile_summary'.",
+          "evaluator_type": "deterministic",
+          "evaluator": "agentic_evals.builtin",
+          "evaluator_version": "0.9.0",
+          "metadata": {}
+        },
+        {
+          "name": "required_field:skills",
+          "metric": "required_field",
+          "value": 1.0,
+          "passed": true,
+          "required": true,
+          "skipped": false,
+          "explanation": "Output contains required field 'skills'.",
+          "evaluator_type": "deterministic",
+          "evaluator": "agentic_evals.builtin",
+          "evaluator_version": "0.9.0",
+          "metadata": {}
+        },
+        {
+          "name": "required_field:role_fit_summary",
+          "metric": "required_field",
+          "value": 1.0,
+          "passed": true,
+          "required": true,
+          "skipped": false,
+          "explanation": "Output contains required field 'role_fit_summary'.",
+          "evaluator_type": "deterministic",
+          "evaluator": "agentic_evals.builtin",
+          "evaluator_version": "0.9.0",
+          "metadata": {}
+        },
+        {
+          "name": "required_field:gaps",
+          "metric": "required_field",
+          "value": 1.0,
+          "passed": true,
+          "required": true,
+          "skipped": false,
+          "explanation": "Output contains required field 'gaps'.",
+          "evaluator_type": "deterministic",
+          "evaluator": "agentic_evals.builtin",
+          "evaluator_version": "0.9.0",
+          "metadata": {}
+        },
+        {
+          "name": "required_field:next_action",
+          "metric": "required_field",
+          "value": 1.0,
+          "passed": true,
+          "required": true,
+          "skipped": false,
+          "explanation": "Output contains required field 'next_action'.",
+          "evaluator_type": "deterministic",
+          "evaluator": "agentic_evals.builtin",
+          "evaluator_version": "0.9.0",
+          "metadata": {}
+        }
+      ],
+      "output": "{\n  \"profile_summary\": \"The learner has foundational Python and SQL skills.\",\n  \"skills\": [\n    {\n      \"name\": \"Python\",\n      \"level\": \"Developing\",\n      \"confidence\": 0.8,\n      \"evidence\": \"The learner reports knowing Python basics.\",\n      \"evidence_type\": \"Self-reported\"\n    },\n    {\n      \"name\": \"PostgreSQL\",\n      \"level\": \"Developing\",\n      \"confidence\": 0.9,\n      \"evidence\": \"The learner built a project storing API data in PostgreSQL.\",\n      \"evidence_type\": \"Project\"\n    }\n  ],\n  \"role_fit_summary\": \"The learner has a foundation for data engineering.\",\n  \"gaps\": [\n    {\n      \"skill\": \"Data pipeline orchestration\",\n      \"priority\": \"High\",\n      \"reason\": \"Orchestration helps manage repeatable data workflows.\",\n      \"prerequisite\": \"Build a Python pipeline that loads API data into PostgreSQL.\"\n    }\n  ],\n  \"next_action\": {\n    \"title\": \"Build an API-to-PostgreSQL pipeline\",\n    \"why\": \"This extends the learner's existing API and SQL experience.\",\n    \"steps\": [\n      \"Extract data from a public API.\",\n      \"Validate and transform the data.\",\n      \"Load the data into PostgreSQL.\"\n    ],\n    \"success_evidence\": \"Verify that the pipeline loads records using SQL.\",\n    \"estimated_hours\": 4\n  }\n}\n",
+      "trace_id": "pathweaver-sample-001",
+      "latency_ms": 0.0,
+      "cost_usd": null,
+      "cost_source": null,
+      "sample_available": true,
+      "target_status": null,
+      "target_attempts": null,
+      "target_error": null,
+      "tags": [],
+      "metadata": {}
+    }
+  ]
+}
